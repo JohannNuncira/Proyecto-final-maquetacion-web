@@ -1,0 +1,281 @@
+/* font-family: "Raleway", sans-serif;
+font-family: "Montserrat", sans-serif; */
+
+/* NORMALIZACION */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Padding y border no afectan el ancho y alto del elemento. */
+    font-family: "Raleway", sans-serif;
+    list-style: none; /* lista sin viñetas */
+    text-decoration: none; /* Elimina subrayado de los links */
+    color: whitesmoke;
+}
+
+body {
+    background-color: black; /* TO DO: Cambiar cuando se defina el background final */
+}
+
+header {
+    position: fixed; /* hace que el header se quede fijo en la parte de arriba */
+    right: 0;
+    top: 0;
+    z-index: 100; /* Hace que el header se muestre en la parte frontal */
+    width: 100%;
+    display: flex; /* Lo elemento se vean en linea */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Ubica los elementos a cada extremo de la linea */
+    padding: 15px 3%; /* 15 px en eje horizontal y 3% en el eje vertical */
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700; /*grueso del texto */
+}
+
+.navlist {
+    display: flex;    
+}
+
+.navlist a {
+    margin-left: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent; /* Subrayado transparente */
+    transition: all 0.5s ease; /*anima las caracteridtical del .navlist a */
+}
+
+.navlist a:hover {
+     border-bottom: 2px solid whitesmoke; /* Subrayado blanco en hover */
+}
+
+/* Solamente visible para pagina colapsada */
+#menu-icon {
+    display: none;
+}
+
+#menu-icon {
+    font-size: 30px;
+    z-index: 101; /* para que este sobre el header */
+    cursor: pointer; /* reemplaxa el curson sobre el icono */
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* No se le puede dar click al checkbox */
+.menu-icon-click {
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /*background grafiente */
+    position: relative; /* relatico al contenedor usa Top, right, bottom y left */
+    display: grid; /* divide la seccion hero en dos columnas */
+    grid-template-columns: 1fr 1fr; /* las dos columnas */
+    align-items: center; /* alinea verticalmente */
+    gap: 2rem; /* espacio de dos rem */
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h5 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p {
+    font-size: 90%;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 31px;
+}
+
+.hero-imagen img {
+    width: 300px;
+    height: auto;
+    border: 10px solid  #131313;
+    border-radius: 50%;
+    margin: 10% 0 0 10%;
+    transition: all 2s linear;
+}
+
+.hero-imagen img:hover {
+    border: 10px solid #385e70;
+    width: 400px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #616364;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.5s ease ;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid whitesmoke;
+    transform: translateX(12px);
+}
+
+.hero-text a.videos {
+    margin-left: 25px;
+}
+
+.hero-text a.videos i {
+    
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%); 
+}
+
+.icons i {
+    display: block;
+    margin: 25px 0;
+    font-size: 25px;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover {
+    color: #385e70;
+    transform: translateY(-7px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(-7px);
+}
+
+
+/* Media query para diseño responsive */
+
+@media (max-width:992px){
+    section {
+        padding: 0 3%;
+        transition: 0.2s;
+    }
+
+    .hero-text {
+        padding-top: 0;
+    }
+
+    .hero-imagen {
+        text-align: center;
+    }
+
+    .hero-imagen img {
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p {
+        font-size: 65%;
+    }
+
+    .icons {
+        display: none;
+
+    } 
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width:720px){
+    
+    .menu-icon-click {
+        display: block;
+    }
+    
+    #menu-icon {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-imagen img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 150px;
+        height: 180px;
+        background-color: rgba(48, 50, 56, 0.89);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 0.5s ease;
+        border-radius: 5px;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+        font-size: 15px;
+    }
+
+    #menu-toggle:checked + label.menu-icon-click + ul {
+        right: 0;
+    }
